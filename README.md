@@ -57,10 +57,6 @@ https://openapi.programming-hero.com/api/plant/1
 
 
 
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
-
-
 ##  🧪 Challenges 
 
 
