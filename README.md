@@ -32,8 +32,6 @@
     3) Remove from Cart 
     Clicking ❌ removes tree and deducts price from total.
 
-    4) Loading Spinner
-    Show spinner while data is loading.
 
 
 

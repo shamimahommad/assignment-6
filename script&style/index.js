@@ -122,6 +122,7 @@ const cardMenu = (categories) => {
 }
 //Menu Load
 
+// add to cart 
 const addToCart = (id) => {
     const url = `https://openapi.programming-hero.com/api/plant/${id}`;
     fetch(url)
@@ -130,7 +131,6 @@ const addToCart = (id) => {
 }
 
 const addToCartData = [];
-// let balance = document.getElementById('total-cart').innerText;
 const cartOption = (tree) => {
     const treeName = `${tree.name}`;
     const treePrice = `${tree.price}`;
@@ -139,6 +139,7 @@ const cartOption = (tree) => {
         name: treeName,
         price: treePrice,
     }
+    alert(`${treeName} has been added to cart 🛒`)
     addToCartData.push(data);
 
     const cartList = document.getElementById('cart-list');
@@ -160,10 +161,29 @@ const cartOption = (tree) => {
     // balance updating
     const cartBalance = parseInt(document.getElementById('total-cart').innerText);
     newBalance = cartBalance + parseInt(treePrice);
-    document.getElementById('total-cart').innerText = newBalance;
+    document.getElementById('total-cart').innerText = newBalance;    
+}//add to cart
+
+// remove from cart 
+const removeFromCart= (id)=> {
+    const arrayID = addToCartData.findIndex(item => item.id === id);
+    // console.log(arrayID);
+    let itemPrice = 0;
+
+    if (arrayID !== -1) {
+        const price = parseInt(addToCartData[arrayID].price);
+        itemPrice = isNaN(price) ? 0 : price;
+        addToCartData.splice(arrayID, 1);
+    }
+
+    const row = document.querySelector(`[data-id="${id}"]`);
+    if (row) row.remove();
+    
+    const afterRemove = document.getElementById('total-cart');
+    const currentTotal = parseInt(afterRemove.innerText) || 0;
+    const newTotal = currentTotal - itemPrice;
+    afterRemove.innerText = newTotal;
 }
-
-
 
 
 
