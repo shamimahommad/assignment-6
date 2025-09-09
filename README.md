@@ -21,7 +21,7 @@
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
 উত্তরঃ Template literals হলো ES6 এ নতুন ধরনের string লেখার সিনট্যাক্স, যা backticks (``) দিয়ে লেখা হয়। এতে variable
         interpolation এবং multi-line strings সহজে লেখা যায়। 
-## ⚙️ Functionalities 
+
 
 
 
@@ -29,15 +29,12 @@
 
 ##  🧪 Challenges 
 
-
     3) Remove from Cart 
     Clicking ❌ removes tree and deducts price from total.
 
     4) Loading Spinner
     Show spinner while data is loading.
 
-    5) Active Button State 
-    Highlight active category button when selected.
 
 
 ## 🔗 Submission

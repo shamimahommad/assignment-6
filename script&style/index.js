@@ -7,6 +7,10 @@ const allPlants = () => {
         .then((contents) => cardContainer(contents.plants));
 }
 
+// all tree button
+const allTreeBtn = document.getElementById('all-tree-btn')
+    .addEventListener('click', allPlants);
+
 
 // modal tree details 
 const treeDetails = (id) => {
@@ -36,13 +40,23 @@ const treeModal = (data) => {
     `;
     document.getElementById('tree_modal').showModal();
 }
+//modal end
 
-// all tree button
-const allTreeBtn = document.getElementById('all-tree-btn')
-    .addEventListener('click', allPlants);
+
+//loading function
+const manageSpinner=(status)=>{
+    if(status==true){
+        document.getElementById('spinner').classList.remove('hidden');
+        document.getElementById('card-container').classList.add('hidden');
+    }else{
+        document.getElementById('card-container').classList.remove('hidden');
+        document.getElementById('spinner').classList.add('hidden');
+    }
+}
 
 
 const cardContainer = (plants) => {
+    manageSpinner(true);
     const cardBox = document.getElementById('card-container');
     cardBox.innerHTML = ``;
     for (let plant of plants) {
@@ -60,19 +74,17 @@ const cardContainer = (plants) => {
                         <button onclick='addToCart(${plant.id})' class="btn bg-[#15803D] cart-btn rounded-3xl text-white ">Add to Cart</button>
         `;
         cardBox.append(showAllTree);
-    }
-} //all plant form api
-
-
-const removeActive=()=>{
-    const menuBtns=document.querySelectorAll('.menu-btn');
-    // console.log(menuBtns);
-    menuBtns.forEach(btn=>btn.classList.remove('active'));
-    
+    };
+    manageSpinner(false);
 }
 
 
-
+//active class remove korar jonno
+const removeActive=()=>{
+    const menuBtns=document.querySelectorAll('.menu-btn');
+    // console.log(menuBtns);
+    menuBtns.forEach(btn=>btn.classList.remove('active'));    
+}
 const plantCategoryID = (id) => {
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
     fetch(url)
