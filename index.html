@@ -76,26 +76,35 @@
     <!-- Choose your Trees  -->
     <section class=" bg-green-50 p-15">
         <h1 class="text-center text-4xl font-bold text-green-950 p-5">Choose Your Trees</h1>
-        <div class="grid md:grid-cols-6  gap-5">
-            <div class="h-full  col-span-1">
+        <div class="md:grid md:grid-cols-6 gap-5">
+            <div class="h-full col-span-1">
                 <div>
                     <h1 class="text-2xl font-bold">Categories</h1>
-                    <button id="all-tree-btn" class="btn bg-[#15803D] text-xl mt-2 w-full text-white justify-start">All
-                        Tree</button>
+                    <button id="all-tree-btn" class="btn menu-btn active text-xl mt-2 w-full justify-start">All Tree</button>
                 </div>
                 <div id="card-category">
 
                 </div>
             </div>
             <div class="h-full col-span-4 p-4">
-                <div id="card-container" class="grid md:grid-cols-3 gap-4">
+                <div id="card-container" class="grid md:grid-cols-3 gap-4 ">
+                    <!-- <span class="loading loading-spinner loading-xl"></span> -->
+                </div>
+            </div>
+            <div class="h-fit rounded-md mt-4 p-4 bg-white shadow-md col-span-1">
+                <h1 class="text-xl font-bold text-green-900 mb-5">Your Cart List</h1>
+                
+
+                <div id="cart-list" >
 
                 </div>
 
+                <div class="items-center px-2 mt-3 bg-white shadow-md border-2 border-green-700 rounded-xl"></div>
+                <div class="flex justify-between mt-1">
+                    <div>Total $</div>
+                    <div><span id="total-cart">0</span></div>
+                </div>
             </div>
-        </div>
-        <div class="h-full bg-white shadow-md col-span-1">
-        </div>
         </div>
     </section>
 
@@ -158,8 +167,6 @@
     </section>
 
     <!-- Tree details in modal -->
-    <!-- Open the modal using ID.showModal() method -->
-    <button class="btn" onclick="tree_modal.showModal()">open modal</button>
     <dialog id="tree_modal" class="modal">
 
     </dialog>
