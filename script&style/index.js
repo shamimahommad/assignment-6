@@ -1,10 +1,15 @@
 
 //All Plant From api
 const allPlants = () => {
+    manageSpinner(true);
     const url = 'https://openapi.programming-hero.com/api/plants';
     fetch(url)
         .then((res) => res.json())
-        .then((contents) => cardContainer(contents.plants));
+        .then((contents) => {
+            cardContainer(contents.plants);
+            manageSpinner(false);
+        });
+
 }
 
 // all tree button
@@ -56,7 +61,6 @@ const manageSpinner=(status)=>{
 
 
 const cardContainer = (plants) => {
-    manageSpinner(true);
     const cardBox = document.getElementById('card-container');
     cardBox.innerHTML = ``;
     for (let plant of plants) {
@@ -75,7 +79,6 @@ const cardContainer = (plants) => {
         `;
         cardBox.append(showAllTree);
     };
-    manageSpinner(false);
 }
 
 
@@ -86,6 +89,7 @@ const removeActive=()=>{
     menuBtns.forEach(btn=>btn.classList.remove('active'));    
 }
 const plantCategoryID = (id) => {
+    manageSpinner(true);    //star spinner
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
     fetch(url)
         .then((res) => res.json())
@@ -95,6 +99,7 @@ const plantCategoryID = (id) => {
             // console.log(clickBtn);            
             clickBtn.classList.add('active');
             cardContainer(json.plants)
+            manageSpinner(false);
         });
 }
 

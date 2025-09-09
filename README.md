@@ -27,16 +27,7 @@
 
 
 
-##  🧪 Challenges 
-
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
+- **Live Link :** 
+- **GitHub Repository:** 
 
 ---
